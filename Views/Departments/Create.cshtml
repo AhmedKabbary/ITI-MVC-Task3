@@ -1,0 +1,17 @@
+﻿@model Department;
+
+<form method="post">
+    <label>Name:</label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+
+    <br />
+
+    <input type="submit" value="add" />
+
+    @section Scripts
+        {
+        <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    }
+</form>

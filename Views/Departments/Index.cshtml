@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Department>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <a class="btn btn-primary m-2" asp-action="Create">Add department</a>
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <td>Actions</td>
+            </tr>
+        </thead>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>
+                    <a class="btn btn-primary" href="/departments/details/@item.Id">View</a>
+                    <a class="btn btn-warning" href="/departments/edit/@item.Id">Edit</a>
+                    <a class="btn btn-danger" href="/departments/delete/@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
